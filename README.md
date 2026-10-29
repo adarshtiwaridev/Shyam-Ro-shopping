@@ -1,145 +1,341 @@
-# Shyam RO - E-Commerce & Water Purification Solutions Platform
+# Shyam RO Shopping 💧
 
-A full-stack, enterprise-grade e-commerce and service management platform for **Shyam RO** built on **Next.js**, **React**, **Redux Toolkit**, **Tailwind CSS**, and **MongoDB / Mongoose**.
+### E-Commerce & Water Purification Solutions Platform
+
+Shyam RO Shopping is a full-stack e-commerce and service management platform designed to simplify the purchase, customization, and maintenance of water purification systems.
+
+Built with **Next.js, React, Redux Toolkit, Tailwind CSS, and MongoDB**, the platform combines an intuitive shopping experience with secure payments, RO maintenance services, and comprehensive administrative tools.
+
+Our goal is to make water purification products and maintenance services more accessible through a modern, reliable, and user-friendly digital platform.
 
 ---
 
-## 🌟 Key Features
+## ✨ Key Features
 
 ### 🛒 E-Commerce & Product Catalog
-- **Multi-Category Water Purifiers & Spares:** Browse RO systems, alkaline purifiers, UV/UF units, filters, and membranes with live stock checking.
-- **Custom RO Configurator:** Interactive component builder for customized water purifiers with custom filters, cabinets, and TDS parameters.
-- **Dynamic Cart & Checkout:** Persistent Redux-backed shopping cart with auto `localStorage` synchronization and dual authentication support.
-- **Online & COD Payments:** Seamless Razorpay payment gateway integration with webhooks and Cash on Delivery support.
 
-### 🛠️ Services & Maintenance (AMC)
-- **Annual Maintenance Contract (AMC) Enquiries:** Customer portal to schedule RO maintenance, filter replacements, and membrane servicing.
-- **Automated Email Notifications:** Multi-transport email dispatcher with branded HTML templates for account OTPs, password resets, and AMC notifications.
-- **AI AquaBot Assistant:** Integrated conversational assistant helping customers diagnose RO purifier issues and pick the right filter model.
+* **Product Categories:** Explore RO water purifiers, alkaline purifiers, UV/UF systems, filters, membranes, and spare parts.
+* **Custom RO Configurator:** Configure water purifiers using compatible components, cabinets, filters, and TDS parameters.
+* **Smart Shopping Cart:** Manage cart items with Redux Toolkit and local storage persistence.
+* **Secure Checkout:** Streamlined checkout experience with authentication support.
+* **Multiple Payment Options:** Razorpay integration and Cash on Delivery support.
+* **Product Availability:** Display product stock and availability information.
+
+### 🛠️ RO Services & Maintenance
+
+* **AMC Enquiries:** Submit requests for Annual Maintenance Contracts.
+* **Maintenance Requests:** Request RO servicing, filter replacements, and membrane maintenance.
+* **Email Notifications:** Branded email templates for account verification, password resets, and service notifications.
+* **AI AquaBot:** Conversational assistance for troubleshooting RO issues and identifying suitable filters.
 
 ### 🔐 Authentication & Security
-- **Dual Authentication System:** NextAuth.js (Google OAuth) + Custom JWT/Session Cookie authentication.
-- **Role-Based Access Control (RBAC):** Strict authorization protecting admin endpoints (`admin`, `microadmin`, and `customer` roles).
-- **Password & Account Lifecycle:** Cryptographically secure `bcryptjs` hashing, 6-digit OTP verification, secure password reset tokens, and account deletion flows.
 
-### 📊 Admin Operations & Analytics
-- **Live Order Management:** Real-time tracking addresses, shipment status changes, order details modal, and print-ready invoices.
-- **Visual Analytics:** Interactive Recharts-powered revenue, order quantity, and active user metrics with Weekly, Monthly, and Yearly aggregation.
-- **Catalog Management:** Add and update products, categories, image assets with Cloudinary integration.
+* Google OAuth authentication using NextAuth.js.
+* Custom JWT and session-cookie authentication.
+* Role-Based Access Control (RBAC) for administrators and customers.
+* Secure password hashing with bcryptjs.
+* Six-digit OTP verification.
+* Password reset functionality.
+* Account management and deletion workflows.
+* Protected administrative APIs.
+
+### 📊 Admin Dashboard & Analytics
+
+* **Order Management:** View orders, manage order statuses, and track shipping information.
+* **Invoice Generation:** Access order details and print-ready invoices.
+* **Business Analytics:** Visualize revenue, order volume, and user activity.
+* **Time-Based Reports:** Analyze weekly, monthly, and yearly metrics.
+* **Product Management:** Add, edit, and manage product listings.
+* **Category Management:** Organize products into relevant categories.
+* **Cloudinary Integration:** Manage product images and media assets.
+
+### 🔎 SEO & Performance
+
+* Reusable SEO metadata configuration.
+* Canonical URLs.
+* Open Graph metadata for social sharing.
+* Twitter Card metadata.
+* Search-engine-friendly page structure.
+* `noindex` directives for private account and administrative pages.
+* Cached MongoDB connections to reduce unnecessary reconnections.
 
 ---
 
-## 🏗️ Architecture & Technology Stack
+## 🧰 Technology Stack
 
-| Layer | Technologies |
-|---|---|
-| **Framework** | Next.js 15 (Pages Router), React 18 |
-| **State Management** | Redux Toolkit (`authSlice`, `cartSlice`, `orderSlice`) |
-| **Database & ODM** | MongoDB with Mongoose 8 (Global cached connections) |
-| **Authentication** | NextAuth v4 + Custom HTTP-only signed cookies |
-| **Styling** | Vanilla Tailwind CSS 4, Framer Motion, Lucide Icons |
-| **Payments** | Razorpay Node SDK & Checkout Modal |
-| **File Storage** | Cloudinary API |
-| **SEO & Meta** | Reusable SEO module with Canonical URLs, OG Tags, Twitter Cards |
+| Layer             | Technology                                      |
+| ----------------- | ----------------------------------------------- |
+| Framework         | Next.js 15                                      |
+| Frontend          | React 18                                        |
+| Language          | JavaScript / TypeScript, as used in the project |
+| State Management  | Redux Toolkit                                   |
+| Styling           | Tailwind CSS 4                                  |
+| Animations        | Framer Motion                                   |
+| Icons             | Lucide React                                    |
+| Database          | MongoDB                                         |
+| ODM               | Mongoose 8                                      |
+| Authentication    | NextAuth.js v4 and custom authentication        |
+| Payments          | Razorpay                                        |
+| Email             | Nodemailer                                      |
+| Image Storage     | Cloudinary                                      |
+| Charts            | Recharts                                        |
+| Validation        | Zod                                             |
+| Password Security | bcryptjs                                        |
+| Deployment        | Vercel                                          |
 
 ---
 
-## ⚙️ Environment Variables
+## 🏗️ Application Architecture
 
-Create a `.env` file in the project root. Refer to `.env.example` for the complete specification.
+The application is organized around the following functional modules:
+
+1. **Customer Storefront** — Product discovery, shopping cart, checkout, and order management.
+2. **Product Configuration** — Custom RO purifier configuration and component selection.
+3. **Authentication** — Account registration, login, verification, and password recovery.
+4. **Service Management** — AMC enquiries and RO maintenance requests.
+5. **Payment Processing** — Razorpay checkout and Cash on Delivery.
+6. **Administration** — Product management, order operations, and analytics.
+7. **AI Assistance** — AquaBot support for product selection and troubleshooting.
+
+The implementation should be verified against the actual project source code before treating every module as production-ready.
+
+---
+
+## ⚙️ Environment Configuration
+
+Create a `.env` file in the project root and configure the environment variables required by your application.
+
+Use `.env.example` as the reference for the complete configuration.
 
 ```env
-# Application & Branding
+# Application
 PORT=3000
 NODE_ENV=development
 NEXT_PUBLIC_APP_URL=http://localhost:3000
 NEXT_PUBLIC_SITE_NAME="Shyam RO"
 NEXT_PUBLIC_COMPANY_NAME="Shyam RO"
 
-# Database
-MONGODB_URI=mongodb+srv://<user>:<password>@cluster0.mongodb.net/shyamro?retryWrites=true&w=majority
+# MongoDB
+MONGODB_URI=
 
-# NextAuth Configuration
+# NextAuth
 NEXTAUTH_URL=http://localhost:3000
-NEXTAUTH_SECRET=your-random-32-character-secret-key-here
-GOOGLE_CLIENT_ID=your-google-client-id
-GOOGLE_CLIENT_SECRET=your-google-client-secret
+NEXTAUTH_SECRET=
+GOOGLE_CLIENT_ID=
+GOOGLE_CLIENT_SECRET=
 
-# Razorpay Payment Gateway
-NEXT_PUBLIC_RAZORPAY_KEY_ID=rzp_test_placeholder
-RAZORPAY_KEY_SECRET=placeholder_secret_key
+# Razorpay
+NEXT_PUBLIC_RAZORPAY_KEY_ID=
+RAZORPAY_KEY_SECRET=
 
-# Email Service (Nodemailer)
+# Email Service
 MAIL_HOST=smtp.gmail.com
 MAIL_PORT=587
 MAIL_SECURE=false
-MAIL_AUTH=your-email@gmail.com
-MAIL_PASS=your-google-app-password
+MAIL_AUTH=
+MAIL_PASS=
 MAIL_FROM="Shyam RO <no-reply@shyamro.com>"
 
-# Cloudinary Media Storage
-CLOUDINARY_CLOUD_NAME=your-cloud-name
-CLOUDINARY_API_KEY=your-api-key
-CLOUDINARY_API_SECRET=your-api-secret
+# Cloudinary
+CLOUDINARY_CLOUD_NAME=
+CLOUDINARY_API_KEY=
+CLOUDINARY_API_SECRET=
 
-# AI Chatbot Assistant (Groq / OpenAI)
-GROQ_API_KEY=your-groq-api-key
+# AI Assistant
+GROQ_API_KEY=
 ```
+
+**Security guidelines:**
+
+* Never commit `.env` files to GitHub.
+* Never expose secret keys through `NEXT_PUBLIC_` variables.
+* Use strong, randomly generated authentication secrets.
+* Configure production credentials through Vercel Environment Variables.
+* Use separate test and production payment credentials.
+* Rotate any credentials accidentally committed to a repository.
+
+Some variables may be optional depending on the features enabled in your deployment.
 
 ---
 
 ## 🚀 Getting Started
 
 ### Prerequisites
-- Node.js >= 18.17.0
-- MongoDB instance (local or Atlas)
-- npm or yarn
 
-### Installation
+* Node.js 18.17.0 or a version compatible with your installed Next.js release.
+* npm or Yarn.
+* MongoDB local instance or MongoDB Atlas account.
+* Git.
+
+### 1. Clone the Repository
+
 ```bash
-# Clone the repository
-git clone <repo-url>
-cd RoSite
+git clone https://github.com/adarshtiwaridev/shyam-ro-shopping.git
+```
 
-# Install dependencies
+### 2. Navigate to the Project
+
+```bash
+cd shyam-ro-shopping
+```
+
+### 3. Install Dependencies
+
+```bash
 npm install
+```
 
-# Setup environment variables
+### 4. Configure Environment Variables
+
+Create your local environment file.
+
+**Windows PowerShell:**
+
+```powershell
+Copy-Item .env.example .env
+```
+
+**macOS / Linux:**
+
+```bash
 cp .env.example .env
 ```
 
-### Running Locally
+Add your actual configuration values to `.env`.
+
+### 5. Start the Development Server
+
 ```bash
 npm run dev
 ```
-Open [http://localhost:3000](http://localhost:3000) to view the application.
 
-### Building for Production
+Open the application at:
+
+http://localhost:3000
+
+### 6. Create a Production Build
+
 ```bash
-# Compile and create production bundle
 npm run build
+```
 
-# Start production server
+### 7. Start the Production Server Locally
+
+```bash
 npm run start
 ```
 
+Run the commands from the project root. Available scripts depend on the project's `package.json`.
+
 ---
 
-## 🔒 Security Best Practices Implemented
-1. **No Sensitive Data Leaks:** Frontend code never accesses database credentials or secret keys. Configuration is filtered through `src/lib/env.js`.
-2. **MongoDB Connection Caching:** Prevents serverless connection pool exhaustion via `global.mongoose`.
-3. **Protected Admin Routes:** All `/api/admin/*` routes verify session authenticity and admin privileges before performing mutations.
-4. **Input Sanitization & Schema Validation:** Critical endpoints use Zod validation schemas (`src/lib/zodSchemas`).
-5. **SEO & Privacy Controls:** Non-public dashboards, auth pages, and payment confirmation screens are marked with `noindex, nofollow` to prevent indexing of customer information.
+## ☁️ Deploying to Vercel
+
+Shyam RO Shopping can be deployed to Vercel.
+
+### Deployment Steps
+
+1. Push the project to GitHub.
+2. Sign in to Vercel.
+3. Import the `shyam-ro-shopping` repository.
+4. Configure the required environment variables.
+5. Confirm the framework preset and build settings.
+6. Deploy the project.
+7. Test authentication, product listings, checkout, emails, and administrative features.
+
+### Production Environment Variables
+
+Configure the required values under your Vercel project's environment settings.
+
+Typical production configuration includes:
+
+* `MONGODB_URI`
+* `NEXTAUTH_URL`
+* `NEXTAUTH_SECRET`
+* `GOOGLE_CLIENT_ID`
+* `GOOGLE_CLIENT_SECRET`
+* `NEXT_PUBLIC_RAZORPAY_KEY_ID`
+* `RAZORPAY_KEY_SECRET`
+* Email service credentials.
+* Cloudinary credentials.
+* `GROQ_API_KEY`, if the AI assistant is enabled.
+* `NEXT_PUBLIC_APP_URL`
+
+Use the actual deployed domain for production URL variables. Update Google OAuth callback URLs, payment gateway settings, and any webhook endpoints to match the deployed application.
+
+### Vercel Deployment URL
+
+**Expected URL format:**
+
+`https://shyam-ro-shopping.vercel.app`
+
+This is a proposed deployment URL, not a verified live deployment. Vercel may assign a different URL depending on project configuration and domain availability.
+
+After deployment, replace it with your actual production URL.
+
+---
+
+## 🔒 Security Best Practices
+
+* Keep credentials and API secrets on the server.
+* Validate incoming requests before processing them.
+* Enforce authorization checks on protected API endpoints.
+* Hash passwords before storing them.
+* Use secure session and cookie settings.
+* Validate payment status on the server rather than trusting the frontend.
+* Verify payment webhooks using the appropriate signature verification mechanism.
+* Restrict access to administrative functions.
+* Avoid exposing customer information in logs or public pages.
+* Keep private account, checkout, and administrative pages out of search engine indexes.
+* Review dependencies and security advisories regularly.
 
 ---
 
 ## 📞 Support & Business Information
-- **Brand:** Shyam RO
-- **Support Email:** support@shyamro.com
-- **Helpline:** +91-9876543210 / 8252590019
-- **Address:** 123 Industrial Area, Water Solutions Hub, New Delhi, India
+
+**Brand:** Shyam RO
+**Repository:** `shyam-ro-shopping`
+**Support Email:** [support@shyamro.com](mailto:support@shyamro.com)
+**Helpline:**
+**Business Address:** 123 Industrial Area, Water Solutions Hub, New Delhi, India
+
+> **Before publishing:** Verify the support email, both helpline numbers, and business address. Replace any placeholder or outdated details with the official business information.
 
 ---
-&copy; 2026 Shyam RO. All Rights Reserved.
-# Shyam-Ro-shopping
+
+## 🗺️ Future Improvements
+
+Potential improvements for future releases include:
+
+* Enhanced product recommendations.
+* Advanced inventory and stock management.
+* Improved order tracking.
+* Automated AMC reminders.
+* Expanded customer support workflows.
+* Performance and accessibility improvements.
+* Additional analytics and reporting.
+* Automated testing and continuous integration.
+
+---
+
+## 🤝 Contributing
+
+Contributions, bug reports, and feature suggestions are welcome.
+
+1. Fork the repository.
+2. Create a feature branch.
+3. Commit your changes with descriptive messages.
+4. Push your branch to GitHub.
+5. Open a pull request describing your changes.
+
+Ensure that environment files and sensitive credentials are excluded from commits.
+
+---
+
+## 📄 License
+
+Specify the project's license before distributing or reusing the source code.
+
+---
+
+© 2026 Shyam RO. All rights reserved.
