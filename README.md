@@ -296,8 +296,7 @@ After deployment, replace it with your actual production URL.
 **Brand:** Shyam RO
 **Repository:** `shyam-ro-shopping`
 **Support Email:** [support@shyamro.com](mailto:support@shyamro.com)
-**Helpline:**
-**Business Address:** 123 Industrial Area, Water Solutions Hub, New Delhi, India
+
 
 > **Before publishing:** Verify the support email, both helpline numbers, and business address. Replace any placeholder or outdated details with the official business information.
 
