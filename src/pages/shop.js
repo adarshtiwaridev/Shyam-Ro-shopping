@@ -24,7 +24,6 @@ import { useDispatch, useSelector } from "react-redux";
 import toast from "react-hot-toast";
 import { useRouter } from "next/router";
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
 import SEO from "@/src/components/SEO";
 import siteConfig from "@/src/config/site";
 
@@ -113,12 +112,11 @@ const FilterUtils = {
 };
 
 export default function ShopPage() {
-  const searchParams = useSearchParams();
   const router = useRouter();
   const dispatch = useDispatch();
 
   // Get category slug from URL parameters
-  const categorySlug = searchParams.get("slug");
+  const categorySlug = router.query?.slug;
 
   // State management
   const [sortOption, setSortOption] = useState("relevance");

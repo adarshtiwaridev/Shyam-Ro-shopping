@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { BiArrowFromRight } from "react-icons/bi";
 import Link from "next/link";
 import toast from "react-hot-toast";
-import { useRouter } from "next/navigation";
+import { useRouter } from "next/router";
 import { useSelector } from "react-redux";
 import SEO from "@/src/components/SEO";
 

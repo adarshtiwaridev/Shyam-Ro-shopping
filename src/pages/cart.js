@@ -11,7 +11,7 @@ import {
   MinusIcon,
   PlusIcon,
 } from "@heroicons/react/24/outline";
-import { useRouter } from "next/navigation";
+import { useRouter } from "next/router";
 import toast from "react-hot-toast";
 import {
   removeFromCart,
@@ -20,7 +20,6 @@ import {
  
 } from "../redux/slices/cartSlice";
 import { IndianRupee ,ShoppingCart} from "lucide-react";
-import { useSearchParams } from "next/navigation";
 import SEO from "@/src/components/SEO";
  
 
@@ -49,8 +48,7 @@ const MyShoppingCart = () => {
   const displayCartItems = (cartItems && cartItems.length > 0) ? cartItems : localCart;
 
   const router = useRouter();
-  const searchParams = useSearchParams();
-  const skuid = searchParams.get("skuid");
+  const skuid = router.query?.skuid;
 
   // If skuid is present, show only that product
   let singleProduct = null;

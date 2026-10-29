@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useSearchParams, useRouter } from "next/navigation";
+import { useRouter } from "next/router";
  
 import toast from "react-hot-toast";
 import { Input } from "@/components/ui/input";
@@ -21,8 +21,8 @@ export default function CheckoutPage() {
 
     const user = useSelector((state) => state.auth.user);
     const { cartItems } = useSelector((state) => state.cart);
-    const searchParams = useSearchParams();
-    const skuid = searchParams.get("skuid");
+    const router = useRouter();
+    const skuid = router.query?.skuid;
     const allProducts = useSelector((state) => state.product.products);
  
     const [product, setProduct] = useState(null);
@@ -50,7 +50,7 @@ export default function CheckoutPage() {
   const recentproduct = skuid && singleProduct ? [singleProduct] : cartItems;
 const total = recentproduct?.reduce((sum, item) => sum + item.price * (item.quantity || 1), 0) || 0;
 
-  const customConfigParam = searchParams.get("custom");
+  const customConfigParam = router.query?.custom;
   const [customConfig, setCustomConfig] = useState(null);
 
   useEffect(() => {
@@ -82,7 +82,6 @@ console.log("customConfig",customConfig)
   const [orderPlaced, setOrderPlaced] = useState(false);
   const [placedOrderData, setPlacedOrderData] = useState(null);
   
-  const router = useRouter();
 
   const validate = () => {
     const newErrors = {};

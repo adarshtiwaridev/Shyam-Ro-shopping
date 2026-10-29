@@ -158,8 +158,6 @@ const PaymentSchema = new mongoose.Schema(
 );
 
 // Indexes for better query performance
-PaymentSchema.index({ paymentId: 1 });
-PaymentSchema.index({ razorpayPaymentId: 1 });
 PaymentSchema.index({ orderId: 1 });
 PaymentSchema.index({ userId: 1 });
 PaymentSchema.index({ paymentStatus: 1 });

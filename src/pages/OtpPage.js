@@ -2,7 +2,7 @@
 
 import React, { useState, useRef, useEffect } from "react";
 import { Sun, Moon, Shield, ArrowRight, RotateCcw } from "lucide-react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "next/router";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { useDispatch, useSelector } from "react-redux";
@@ -15,8 +15,7 @@ const OTPPage = () => {
   const inputRefs = useRef([]);
   const router = useRouter();
   const [pendingSignup, setPendingSignup] = useState({});
-  const searchParams = useSearchParams();
-  const email = searchParams.get("email");
+  const email = router.query?.email;
   const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
   const user = useSelector((state) => state.auth.user);

@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
-import { useRouter } from "next/navigation";
+import { useRouter } from "next/router";
 
 const DressStyleCarousel = () => {
   const router = useRouter();

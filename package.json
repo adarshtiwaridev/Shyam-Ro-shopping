@@ -9,6 +9,10 @@
     "start": "next start",
     "lint": "next lint"
   },
+  "allowScripts": {
+    "@tailwindcss/oxide": true,
+    "sharp": true
+  },
   "dependencies": {
     "@ant-design/icons": "^6.0.0",
     "@heroicons/react": "^2.2.0",
@@ -26,7 +30,6 @@
     "@reduxjs/toolkit": "^2.8.2",
     "aos": "^2.3.4",
     "axios": "^1.10.0",
-    "bcrypt": "^6.0.0",
     "bcryptjs": "^3.0.2",
     "class-variance-authority": "^0.7.1",
     "cloudinary": "^2.7.0",
@@ -37,7 +40,6 @@
     "embla-carousel-react": "^8.6.0",
     "formidable": "^3.5.4",
     "framer-motion": "^10.16.16",
-    "fs": "^0.0.1-security",
     "lottie-react": "^2.4.1",
     "lucide-react": "^0.525.0",
     "mongoose": "^8.16.1",
