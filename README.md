@@ -157,6 +157,10 @@ GROQ_API_KEY=
 Some variables may be optional depending on the features enabled in your deployment.
 
 ---
+<img width="1520" height="691" alt="image" src="https://github.com/user-attachments/assets/28214679-e8c2-4234-9b0f-75d2da9d6872" />
+<img width="1518" height="688" alt="image" src="https://github.com/user-attachments/assets/6c7759aa-08ac-41ab-be6f-ce9299bf7ce2" />
+
+
 
 ## 🚀 Getting Started
 
